@@ -40,6 +40,6 @@ public class AddressControllerTest extends AbstractTransactionalJUnit4SpringCont
         mvc.perform(post("/address")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(jsonBody))
-                .andExpect(status().isOk());
+                .andExpect(status().isCreated());
     }
 }
