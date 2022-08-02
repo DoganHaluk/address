@@ -18,12 +18,12 @@ public class DefaultAddressService implements AddressService {
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<Address> findById(long id) {
+    public Optional<Address> findAddressById(long id) {
         return addressRepository.findById(id);
     }
 
     @Override
-    public Address create(Address address) {
+    public Address createAddress(Address address) {
         return addressRepository.save(address);
     }
 }

@@ -5,7 +5,7 @@ import be.gordion.address.domain.Address;
 import java.util.Optional;
 
 public interface AddressService {
-    Optional<Address> findById(long id);
+    Optional<Address> findAddressById(long id);
 
-    Address create(Address address);
+    Address createAddress(Address address);
 }

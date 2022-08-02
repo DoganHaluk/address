@@ -26,9 +26,9 @@ class AddressController {
     }
 
     @GetMapping("{id}")
-    Address get(@PathVariable long id) {
+    Address getAddress(@PathVariable long id) {
         logger.info("Address id: " + id + " requested");
-        return addressService.findById(id).orElseThrow(AddressNotFoundException::new);
+        return addressService.findAddressById(id).orElseThrow(AddressNotFoundException::new);
     }
 
     @ExceptionHandler(AddressNotFoundException.class)
@@ -38,8 +38,8 @@ class AddressController {
     }
 
     @PostMapping
-    ResponseEntity<Address> post(@RequestBody @Valid Address address) {
-        return new ResponseEntity<>(addressService.create(address), HttpStatus.CREATED);
+    ResponseEntity<Address> postAddress(@RequestBody @Valid Address address) {
+        return new ResponseEntity<>(addressService.createAddress(address), HttpStatus.CREATED);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
